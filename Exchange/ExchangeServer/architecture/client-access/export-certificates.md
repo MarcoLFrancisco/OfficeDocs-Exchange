@@ -20,13 +20,13 @@ manager: serdars
 
 # Export a certificate from an Exchange server
 
-You can export a certificate from an Exchange server as a backup or to import the certificate on other clients, devices or servers. You can export certificates in the Exchange admin center (EAC) or in the Exchange Management Shell. The resulting certificate file is a password-protected binary PKCS #12 file that contains the certificate's private key, and is suitable for importing (installing) on other servers.
+You can export a certificate from an Exchange server as a backup or to import the certificate on other clients, devices or servers. You can export certificates in the Exchange Management Shell. The resulting certificate file is a password-protected binary PKCS #12 file that contains the certificate's private key, and is suitable for importing (installing) on other servers.
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes.
 
-- In the EAC, you need to export the certificate file to a UNC path (`\\<Server>\<Share>\` or `\\<LocalServerName>\c$\`). In the Exchange Management Shell, you can specify a local path.
+- In the Exchange Management Shell, you can specify a local path.
 
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
@@ -36,20 +36,6 @@ You can export a certificate from an Exchange server as a backup or to import th
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at: [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver), [Exchange Online](/answers/topics/office-exchange-server-itpro.html), or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
-
-## Use the EAC to export a certificate
-
-1. Open the EAC and navigate to **Servers** \> **Certificates**.
-
-2. In the **Select server** list, select the Exchange server that contains the certificate, click **More options** ![More Options icon.](../../media/ITPro_EAC_MoreOptionsIcon.png), and select **Export Exchange certificate**.
-
-3. On the **Export Exchange certificate** page that opens, enter the following information:
-
-   - **File to export to**: Enter the UNC path and file name of the certificate file. For example, `\\FileServer01\Data\Fabrikam.pfx`
-
-   - **Password**: When you export the certificate with its private key, you need to specify a password. Exporting the certificate with its private key allows you to import the certificate on other servers.
-
-   When you're finished, click **OK**.
 
 ## Use the Exchange Management Shell to export a certificate
 
