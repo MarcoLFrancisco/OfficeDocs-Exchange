@@ -20,7 +20,7 @@ manager: serdars
 
 # Renew an Exchange Server certificate
 
-Every certificate has a built-in expiration date. In Exchange Server, the default self-signed certificate that's installed on the Exchange server expires 5 years after Exchange was installed on the server. You can use the Exchange admin center (EAC) or the Exchange Management Shell to renew Exchange certificates. This includes Exchange self-signed certificates, and certificates that were issued by a certification authority (CA).
+Every certificate has a built-in expiration date. In Exchange Server, the default self-signed certificate that's installed on the Exchange server expires 5 years after Exchange was installed on the server. You can use only the Exchange Management Shell to renew Exchange certificates. This includes Exchange self-signed certificates, and certificates that were issued by a certification authority (CA).
 
 ## What do you need to know before you begin?
 
@@ -47,17 +47,6 @@ The procedures are the same for certificates that were issued by an internal CA 
 
 To renew a certificate that was issued by a CA, you create a certificate renewal request, and then you send the request to the CA. The CA then sends you the actual certificate file that you need to install on the Exchange server. The procedure is nearly identical to that of completing a new certificate request by installing the certificate on the server. For instructions, see [Complete a pending Exchange Server certificate request](complete-pending-certificate-requests.md).
 
-### Use the EAC to create a certificate renewal request for a certification authority
-
-1. Open the EAC and navigate to **Servers** \> **Certificates**.
-
-2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew.
-
-3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane.
-
-4. On the **Renew Exchange certificate** page that opens, in the **Save the certificate request to the following file** field, enter the UNC path and filename for the new certificate renewal request file. For example, `\\FileServer01\Data\ContosoCertRenewal.req`. When you're finished, click **OK**.
-
-The certificate request appears in the list of Exchange certificates with a status value of **Pending**.
 
 ### Use the Exchange Management Shell to create a certificate renewal request for a certification authority
 
@@ -119,16 +108,6 @@ To verify that you have successfully created a certificate renewal request for a
 ## Renew an Exchange self-signed certificate
 
 When you renew an Exchange self-signed certificate, you're basically making a new certificate.
-
-### Use the EAC to renew an Exchange self-signed certificate
-
-1. Open the EAC and navigate to **Servers** \> **Certificates**.
-
-2. In the **Select server** list, select the Exchange server that holds the certificate that you want to renew.
-
-3. All valid certificates have a **Renew** link in the details pane that's visible when you select the certificate from the list. Select the certificate that you want to renew, and then click **Renew** in the details pane.
-
-4. On the **Renew Exchange certificate** page that opens, verify the read-only list of Exchange services that the existing certificate is assigned to, and then click **OK**.
 
 ### Use the Exchange Management Shell to renew an Exchange self-signed certificate
 
